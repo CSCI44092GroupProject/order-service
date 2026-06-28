@@ -14,6 +14,6 @@ public class OpenApiConfig {
         return new OpenAPI().info(new Info()
                 .title("Order Service API")
                 .version("1.0.0")
-                .description("Handles order creation, product lookup, and event publishing"));
+                .description("Handles order creation, product lookup"));
     }
 }
