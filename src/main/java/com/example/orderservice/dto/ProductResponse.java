@@ -2,9 +2,12 @@ package com.example.orderservice.dto;
 
 import java.math.BigDecimal;
 
-/** Subset of product data returned by the Product Service. */
+/** Product details returned by the hosted Product Service. */
 public record ProductResponse(
-        String productId,
+        Long productId,
         String name,
-        BigDecimal price
+        BigDecimal unitPrice,
+        String description,
+        String category,
+        Integer stock
 ) {}

@@ -13,8 +13,13 @@ import java.util.stream.Collectors;
 
 /**
  * Centralized exception handling so controllers stay free from try/catch.
+ *
+ * Scoped to the application's own controllers package only. This prevents the
+ * catch-all Exception handler from intercepting requests served by third-party
+ * controllers such as Springdoc's /v3/api-docs and /swagger-ui endpoints,
+ * which would otherwise mask real errors as a generic 500 response.
  */
-@RestControllerAdvice
+@RestControllerAdvice(basePackages = "com.example.orderservice.controller")
 @Slf4j
 public class GlobalExceptionHandler {
 

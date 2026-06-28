@@ -47,14 +47,14 @@ public class OrderServiceImpl implements OrderService {
 
         for (OrderItemRequest itemReq : request.items()) {
             ProductResponse product = productCatalog.getProduct(itemReq.productId());
-            BigDecimal lineTotal = product.price()
+            BigDecimal lineTotal = product.unitPrice()
                     .multiply(BigDecimal.valueOf(itemReq.quantity()));
 
             OrderItem item = OrderItem.builder()
-                    .productId(product.productId())
+                    .productId(Long.valueOf(String.valueOf(product.productId())))
                     .productName(product.name())
                     .quantity(itemReq.quantity())
-                    .unitPrice(product.price())
+                    .unitPrice(product.unitPrice())
                     .lineTotal(lineTotal)
                     .build();
 

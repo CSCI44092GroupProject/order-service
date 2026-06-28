@@ -8,7 +8,7 @@ import java.util.List;
 public interface ProductCatalog {
 
     /** @return the product, or throws ProductNotFoundException if not exists. */
-    ProductResponse getProduct(String productId);
+    ProductResponse getProduct(Long productId);
 
     /** @return all available products */
     List<ProductResponse> getAllProducts();
