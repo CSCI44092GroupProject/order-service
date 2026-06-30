@@ -21,7 +21,7 @@ public class OrderItem {
     private String orderItemId;
 
     @Column(name = "product_id", nullable = false)
-    private String productId;
+    private Long productId;
 
     @Column(name = "product_name")
     private String productName;

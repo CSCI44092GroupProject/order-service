@@ -26,7 +26,7 @@ public class ProductController {
 
     @GetMapping("/{productId}")
     @Operation(summary = "Get a single product by id")
-    public ProductResponse getProduct(@PathVariable String productId) {
+    public ProductResponse getProduct(@PathVariable Long productId) {
         return productCatalog.getProduct(productId);
     }
 }
